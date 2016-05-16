@@ -1,6 +1,6 @@
 == Pinboard
 
-Pinboard is a image based social media web applications that allows users to post images with a title and description.
+Pinboard is an image based social media web application that allows users to post images with a title and description.
 
 Tech Stack:
 
