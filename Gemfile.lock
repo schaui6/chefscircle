@@ -184,7 +184,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_votable (~> 0.10.0)
-  aws-sdk (~> 2)
+  aws-sdk (~> 2.3)
   bootstrap-sass (~> 3.2.0.2)
   byebug
   coffee-rails (~> 4.1.0)
