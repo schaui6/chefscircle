@@ -5,7 +5,10 @@
         = image_tag @pin.image.url
       .panel-body
         %h1= @pin.title
+        Ingredients:
         %p.description= @pin.ingredients
+        %br
+        Description:
         %p.description= @pin.description
       .panel-footer
         .row
