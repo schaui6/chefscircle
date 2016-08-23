@@ -15,7 +15,7 @@
           .col-md-6
             %p.user
               Submitted by
-              = @pin.user.email
+              = @pin.user.username
           .col-md-6
             .btn-group.pull-right
               = link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do
