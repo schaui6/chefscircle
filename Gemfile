@@ -11,7 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0.5'
 gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'simple_form', '~> 3.0.2'
-gem 'aws-sdk', '~> 2.3'
+gem 'aws-sdk', '< 2.0'
 gem 'devise'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'masonry-rails', '~> 0.2.4'
