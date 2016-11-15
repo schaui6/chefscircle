@@ -7,6 +7,16 @@ class PinsController < ApplicationController
   end
 
   def show
+    pin = Pin.find_by(id: params[:id])
+    phrase = pin.rececipe_name_with_serving_size
+    nutritionx_response = Unirest.get "https://nutritionix-api.p.mashape.com/v1_1/search/#{phrase}?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat",
+    headers:{
+      "X-Mashape-Key" => ENV['NUTRIIONX_API'],
+      "Accept" => "application/json"
+    }
+
+    @recipes = JSON.parse(nutritionx_response.raw_body)
+    @recipe = @recipes['hits'].first
   end
 
   def new
@@ -47,7 +57,7 @@ class PinsController < ApplicationController
   private
 
   def pin_params
-    params.require(:pin).permit(:title, :description, :ingredients, :image)
+    params.require(:pin).permit(:rececipe_name_with_serving_size, :description, :ingredients, :image)
   end
 
   def find_pin

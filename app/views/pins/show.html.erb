@@ -1,0 +1,56 @@
+<div class="row" id="pin_show">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading pin_image">
+        <%= image_tag @pin.image.url %>
+      </div>
+      <div class="panel-body">
+        <h1>
+          <%= @pin.rececipe_name_with_serving_size %>
+        </h1>
+        Ingredients:
+        <p class="description">
+          <%= @pin.ingredients %>
+        </p>
+        <br/>
+        Description:
+        <p class="description">
+          <%= @pin.description %>
+        </p>
+        <br />
+        Nutritional Facts:
+        <p class="description">
+          Calories: <%= @recipe['fields']['nf_calories'] %>
+        </p>
+        <p class="description">
+          Total Fat: <%= @recipe['fields']['nf_total_fat'] %>
+        </p>
+        <p class="description">
+          Serving Size: <%= @recipe['fields']['nf_serving_size_qty'] %> <%= @recipe['fields']['nf_serving_size_unit'] %> 
+        </p>
+      </div>
+      <div class="panel-footer">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="user">
+              Submitted by
+              <%= @pin.user.username %>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="btn-group pull-right">
+              <%= link_to like_pin_path(@pin), method: :put, class: "btn btn-default" do %>
+                <span class="glyphicon glyphicon-heart"></span>
+                <%= @pin.get_upvotes.size %>
+              <% end %>
+              <% if user_signed_in? && @pin.user_id == current_user.id %>
+                <%= link_to "Edit", edit_pin_path, class: "btn btn-default" %>
+                <%= link_to "Delete", pin_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

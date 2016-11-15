@@ -13,13 +13,16 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'simple_form', '~> 3.0.2'
 gem 'aws-sdk', '< 2.0'
 gem 'devise'
+gem 'json'
+gem 'unirest'
 gem 'paperclip', '~> 4.3', '>= 4.3.6'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'acts_as_votable', '~> 0.10.0'
 
 
-group :development, :test do  
+group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -32,4 +35,3 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
-
