@@ -16,3 +16,11 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $('.menu-trigger').click(function(event){
+    $('.nav').slideToggle('fast', function(){
+      $(this).toggleClass('nav-expanded').css('display', '');
+    });
+  });
+});

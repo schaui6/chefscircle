@@ -18,6 +18,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.menu-trigger {
+  display: none;
+}
+
+@media screen and (max-width: 770px){
+
+  .menu-trigger {
+    display: block;
+    color: #305782;
+    padding: 10px;
+    text-align: right;
+    font-size: 100%;
+    cursor: pointer;
+    color: #BD1E23;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .nav li{
+    float: none;
+  }
+
+  .nav-expanded{
+    display: block;
+  }
+}
+
 body {
   background: #E9E9E9;
 }

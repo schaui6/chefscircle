@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <title>Chef's Circle</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-brand">
+        <%= link_to "Chef's Circle", root_path %>
+      </div>
+        <span class="menu-trigger glyphicon glyphicon-align-justify"></span>
+
+      <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+
+          <li>
+            <%= link_to '<i class="glyphicon glyphicon-plus"></i> Add A Recipe'.html_safe, new_pin_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="glyphicon glyphicon-cog"></i> Edit Profile'.html_safe, edit_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="glyphicon glyphicon-off"></i> Log Off'.html_safe,  destroy_user_session_path, method: :delete %>
+          </li>
+
+      <% else %>
+
+          <li>
+            <%= link_to '<i class="glyphicon glyphicon-plus"></i> Sign Up'.html_safe, new_user_registration_path %>
+          </li>
+          <li>
+            <%= link_to '<i class="glyphicon glyphicon-user"></i> Sign In'.html_safe, new_user_session_path %>
+          </li>
+        </ul>
+      <% end %>
+    </div>
+  </nav>
+  <div class="container">
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-info" %>
+    <% end %>
+    <%= yield %>
+  </div>
+</body>
