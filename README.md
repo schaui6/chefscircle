@@ -14,3 +14,4 @@ Chef's Circle is designed for "foodies" (food enthusiasts) where foodies can sha
 
 ## To Dos:
 * Write algorithm to calculate total calories of all food posts a user made by day.
+* Add a social media share button
